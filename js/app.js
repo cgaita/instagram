@@ -1,12 +1,8 @@
 $(document).ready(app)
 function assemble(data){
-		var duplicate = $('.temp').clone();
-		var link = duplicate.find('.list-item a');
-		link.attr('href', data);
-		var img = duplicate.find('.list-item img');
-		img.attr('src', data);
-		duplicate.removeClass('hidden1');
-		return duplicate;
+	var image = "<img src="+ data +"></img>";
+	var anchor = "<a href="+ data +">"+ image +"</a>";
+	return "<li><h2 class='hidden'>caption</h2>"+ anchor +"</li>";
 };
 function app(){
 	$.get('http://beta.json-generator.com/api/json/get/VkxAzj8zG', function(res) {
@@ -16,7 +12,7 @@ function app(){
 			var image = i.image;
 			var result = assemble(image);
 			console.log(result);
-			$('.duplicate').append(result);
+			$('.duplicate ul').append(result);
 		});
 	});
 }
