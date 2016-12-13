@@ -7,12 +7,12 @@ function assemble(data){
 function app(){
 	$.get('http://beta.json-generator.com/api/json/get/VkxAzj8zG', function(res) {
 		// console.log(data)
+		var html = "";
 		res['data'].forEach(function(i){
 			// console.log(i);
 			var image = i.image;
-			var result = assemble(image);
-			console.log(result);
-			$('.duplicate ul').append(result);
+			html = html + assemble(image);
 		});
+		$('.duplicate ul').append(html);
 	});
 }
