@@ -5,7 +5,7 @@ function assemble(data){
 	return "<li><h2 class='hidden'>caption</h2>"+ anchor +"</li>";
 };
 function app(){
-	$.get('https://beta.json-generator.com/api/json/get/VkxAzj8zG', function(res) {
+	$.get('http://beta.json-generator.com/api/json/get/VkxAzj8zG', function(res) {
 		// console.log(data)
 		var html = "";
 		res['data'].forEach(function(i){
